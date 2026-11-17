@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Garmin tokens and exported personal data: never commit
+.garminconnect/
+*.garminconnect*
+garmin_tokens.json
+export/
+downloads/
+*.jsonl
+*.fit
+*.tcx
+*.gpx
+
+# Editors / OS
+.idea/
+.vscode/
+.DS_Store

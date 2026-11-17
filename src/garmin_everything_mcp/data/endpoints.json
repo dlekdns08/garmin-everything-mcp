@@ -1,0 +1,1741 @@
+{
+ "garminconnect": "0.3.20",
+ "count": 270,
+ "endpoints": [
+  {
+   "path": "/activity-service/activity",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_delete_activity_url)"
+  },
+  {
+   "path": "/activity-service/activity/{id}",
+   "method": "delete_activity",
+   "module": "activities",
+   "http": "write (POST/PUT/DELETE)"
+  },
+  {
+   "path": "/activitylist-service/activities",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_activitylist_url)"
+  },
+  {
+   "path": "/activitylist-service/activities/fastest-splits",
+   "method": "get_fastest_splits",
+   "module": "activities",
+   "http": "GET"
+  },
+  {
+   "path": "/activitylist-service/activities/favorite/{dn}",
+   "method": "get_favorite_activities",
+   "module": "activities",
+   "http": "GET"
+  },
+  {
+   "path": "/adhocchallenge-service/adHocChallenge",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_adhoc_challenge_url)"
+  },
+  {
+   "path": "/adhocchallenge-service/adHocChallenge/historical",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_adhoc_challenges_url)"
+  },
+  {
+   "path": "/adhocchallenge-service/adHocChallenge/nonCompleted",
+   "method": "get_active_adhoc_challenges",
+   "module": "achievements",
+   "http": "GET"
+  },
+  {
+   "path": "/badge-service/badge",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_badge_url)"
+  },
+  {
+   "path": "/badge-service/badge/attributes",
+   "method": "get_badge_attributes",
+   "module": "achievements",
+   "http": "GET"
+  },
+  {
+   "path": "/badge-service/badge/available",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_available_badges_url)"
+  },
+  {
+   "path": "/badge-service/badge/detail/v3/{id}",
+   "method": "get_badge_detail",
+   "module": "achievements",
+   "http": "GET"
+  },
+  {
+   "path": "/badge-service/badge/earned",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_earned_badges_url)"
+  },
+  {
+   "path": "/badge-service/badge/earned/latest/{dn}",
+   "method": "get_latest_earned_badges",
+   "module": "achievements",
+   "http": "GET"
+  },
+  {
+   "path": "/badge-service/badge/{dn}/earned/activity/{id}",
+   "method": "get_badges_for_activity",
+   "module": "achievements",
+   "http": "GET"
+  },
+  {
+   "path": "/badge-service/badge/{dn}/earned/dailysummary/{date}",
+   "method": "get_badges_for_day",
+   "module": "achievements",
+   "http": "GET"
+  },
+  {
+   "path": "/badgechallenge-service/badgeChallenge/available",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_available_badge_challenges_url)"
+  },
+  {
+   "path": "/badgechallenge-service/badgeChallenge/completed",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_badge_challenges_url)"
+  },
+  {
+   "path": "/badgechallenge-service/badgeChallenge/non-completed",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_non_completed_badge_challenges_url)"
+  },
+  {
+   "path": "/badgechallenge-service/badgeChallenge/{uuid}",
+   "method": "get_badge_challenge",
+   "module": "achievements",
+   "http": "GET"
+  },
+  {
+   "path": "/badgechallenge-service/virtualChallenge/available",
+   "method": "get_available_virtual_challenges",
+   "module": "achievements",
+   "http": "GET"
+  },
+  {
+   "path": "/badgechallenge-service/virtualChallenge/completed",
+   "method": "get_completed_virtual_challenges",
+   "module": "achievements",
+   "http": "GET"
+  },
+  {
+   "path": "/badgechallenge-service/virtualChallenge/inProgress",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_inprogress_virtual_challenges_url)"
+  },
+  {
+   "path": "/biometric-service/biometric",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_biometric_url)"
+  },
+  {
+   "path": "/biometric-service/biometric/glucose/{date}",
+   "method": "get_glucose_data",
+   "module": "metrics",
+   "http": "GET"
+  },
+  {
+   "path": "/biometric-service/biometric/glucose/{start}/{end}",
+   "method": "get_glucose_data_range",
+   "module": "metrics",
+   "http": "GET"
+  },
+  {
+   "path": "/biometric-service/biometric/latestFunctionalThresholdPower/CYCLING",
+   "method": "get_cycling_ftp",
+   "module": "metrics",
+   "http": "GET"
+  },
+  {
+   "path": "/biometric-service/biometric/latestLactateThreshold",
+   "method": "get_lactate_threshold",
+   "module": "metrics",
+   "http": "GET"
+  },
+  {
+   "path": "/biometric-service/biometric/powerToWeight/latest/{today}",
+   "method": "get_lactate_threshold",
+   "module": "metrics",
+   "http": "GET"
+  },
+  {
+   "path": "/biometric-service/criticalSwimSpeed/latest/{date}",
+   "method": "get_critical_swim_speed",
+   "module": "metrics",
+   "http": "GET"
+  },
+  {
+   "path": "/biometric-service/criticalSwimSpeed/range/{start}/{end}",
+   "method": "get_critical_swim_speed_range",
+   "module": "metrics",
+   "http": "GET"
+  },
+  {
+   "path": "/biometric-service/heartRateZones",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_heart_rate_zones_url)"
+  },
+  {
+   "path": "/biometric-service/heartRateZones/",
+   "method": "update_heart_rate_zones",
+   "module": "metrics",
+   "http": "write (POST/PUT/DELETE)"
+  },
+  {
+   "path": "/biometric-service/heartRateZones/v2",
+   "method": "get_heart_rate_zones_v2",
+   "module": "metrics",
+   "http": "GET"
+  },
+  {
+   "path": "/biometric-service/powerZones",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_power_zones_url)"
+  },
+  {
+   "path": "/biometric-service/powerZones/all",
+   "method": "update_power_zones",
+   "module": "metrics",
+   "http": "write (POST/PUT/DELETE)"
+  },
+  {
+   "path": "/biometric-service/powerZones/sport/{normalized_sport}",
+   "method": "get_power_zones_for_sport",
+   "module": "metrics",
+   "http": "GET"
+  },
+  {
+   "path": "/biometric-service/powerZones/sports/all",
+   "method": "get_power_zones",
+   "module": "metrics",
+   "http": "GET"
+  },
+  {
+   "path": "/biometric-service/stats",
+   "method": "get_biometric_stats",
+   "module": "metrics",
+   "http": "GET"
+  },
+  {
+   "path": "/biometric-service/stats/functionalThresholdPower/range/{start}/{end}",
+   "method": "get_functional_threshold_power_range",
+   "module": "metrics",
+   "http": "GET"
+  },
+  {
+   "path": "/biometric-service/stats/lactateThresholdHeartRate/range/{start}/{end}",
+   "method": "get_lactate_threshold",
+   "module": "metrics",
+   "http": "GET"
+  },
+  {
+   "path": "/biometric-service/stats/lactateThresholdSpeed/range/{start}/{end}",
+   "method": "get_lactate_threshold",
+   "module": "metrics",
+   "http": "GET"
+  },
+  {
+   "path": "/biometric-service/stats/powerToWeight/range/{start}/{end}",
+   "method": "get_power_to_weight_range",
+   "module": "body",
+   "http": "GET"
+  },
+  {
+   "path": "/bloodpressure-service/bloodpressure",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_blood_pressure_url)"
+  },
+  {
+   "path": "/bloodpressure-service/bloodpressure/daily/last/{start}/{end}",
+   "method": "get_daily_last_blood_pressure",
+   "module": "body",
+   "http": "GET"
+  },
+  {
+   "path": "/bloodpressure-service/bloodpressure/dayview/{date}",
+   "method": "get_blood_pressure_day",
+   "module": "body",
+   "http": "GET"
+  },
+  {
+   "path": "/bloodpressure-service/bloodpressure/weeklyRange/{start}/{end}",
+   "method": "get_weekly_blood_pressure",
+   "module": "body",
+   "http": "GET"
+  },
+  {
+   "path": "/calendar-service/calendarItem/{item_type}/{id}/date/{date}",
+   "method": "move_calendar_item",
+   "module": "training",
+   "http": "write (POST/PUT/DELETE)"
+  },
+  {
+   "path": "/calendar-service/event",
+   "method": "create_calendar_event",
+   "module": "training",
+   "http": "write (POST/PUT/DELETE)"
+  },
+  {
+   "path": "/calendar-service/event/primary",
+   "method": "get_primary_event",
+   "module": "training",
+   "http": "GET"
+  },
+  {
+   "path": "/calendar-service/event/{id}",
+   "method": "get_calendar_event",
+   "module": "training",
+   "http": "GET",
+   "also": [
+    "update_calendar_event",
+    "delete_calendar_event"
+   ]
+  },
+  {
+   "path": "/calendar-service/events",
+   "method": "get_calendar_events",
+   "module": "training",
+   "http": "GET"
+  },
+  {
+   "path": "/calendar-service/events/upcoming",
+   "method": "get_upcoming_events",
+   "module": "training",
+   "http": "GET"
+  },
+  {
+   "path": "/calendar-service/note",
+   "method": "create_calendar_note",
+   "module": "training",
+   "http": "write (POST/PUT/DELETE)"
+  },
+  {
+   "path": "/calendar-service/note/{id}",
+   "method": "update_calendar_note",
+   "module": "training",
+   "http": "write (POST/PUT/DELETE)",
+   "also": [
+    "delete_calendar_note"
+   ]
+  },
+  {
+   "path": "/calendar-service/year/{d_year}/month/{d_month_1}/day/{d_day}/start/{first_day_of_week}",
+   "method": "get_calendar_week",
+   "module": "training",
+   "http": "GET"
+  },
+  {
+   "path": "/calendar-service/year/{year}",
+   "method": "get_calendar_year",
+   "module": "training",
+   "http": "GET"
+  },
+  {
+   "path": "/course-service/course",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_course_url)"
+  },
+  {
+   "path": "/course-service/course/convert/activity/{id}",
+   "method": "convert_activity_to_course",
+   "module": "training",
+   "http": "write (POST/PUT/DELETE)"
+  },
+  {
+   "path": "/course-service/course/favorites",
+   "method": "get_course_favorites",
+   "module": "training",
+   "http": "GET",
+   "also": [
+    "set_course_favorite"
+   ]
+  },
+  {
+   "path": "/course-service/course/favorites/course/{id}",
+   "method": "set_course_favorite",
+   "module": "training",
+   "http": "write (POST/PUT/DELETE)"
+  },
+  {
+   "path": "/course-service/course/fit/{id}/0",
+   "method": "download_course",
+   "module": "training",
+   "http": "GET"
+  },
+  {
+   "path": "/course-service/course/gpx/{id}",
+   "method": "download_course",
+   "module": "training",
+   "http": "GET"
+  },
+  {
+   "path": "/course-service/course/import",
+   "method": "import_course",
+   "module": "training",
+   "http": "write (POST/PUT/DELETE)"
+  },
+  {
+   "path": "/course-service/course/owner/{dn}",
+   "method": "get_courses",
+   "module": "training",
+   "http": "GET"
+  },
+  {
+   "path": "/course-service/course/{id}",
+   "method": "get_course",
+   "module": "training",
+   "http": "GET",
+   "also": [
+    "update_course",
+    "delete_course"
+   ]
+  },
+  {
+   "path": "/course-service/pacebands",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_pacebands_url)"
+  },
+  {
+   "path": "/device-service/devicemessage/messages",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_devicemessage_url)"
+  },
+  {
+   "path": "/device-service/devicemonitoring/solargain/{id}/{start}/{end}",
+   "method": "get_device_solar_gain",
+   "module": "devices",
+   "http": "GET"
+  },
+  {
+   "path": "/device-service/deviceregistration/devices",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_devices_url)"
+  },
+  {
+   "path": "/device-service/deviceregistration/devices/all/{dn}",
+   "method": "get_all_devices",
+   "module": "devices",
+   "http": "GET"
+  },
+  {
+   "path": "/device-service/deviceregistration/devices/historical",
+   "method": "get_historical_devices",
+   "module": "devices",
+   "http": "GET"
+  },
+  {
+   "path": "/device-service/deviceservice",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_device_url)"
+  },
+  {
+   "path": "/device-service/deviceservice/app-info/device/{id}",
+   "method": "get_device_app_info",
+   "module": "devices",
+   "http": "GET"
+  },
+  {
+   "path": "/device-service/deviceservice/device-info/active/{dn}",
+   "method": "get_active_devices",
+   "module": "devices",
+   "http": "GET"
+  },
+  {
+   "path": "/device-service/deviceservice/device-info/settings/{id}",
+   "method": "get_device_settings",
+   "module": "devices",
+   "http": "GET",
+   "also": [
+    "update_device_settings"
+   ]
+  },
+  {
+   "path": "/device-service/deviceservice/mylastused",
+   "method": "get_device_last_used",
+   "module": "devices",
+   "http": "GET"
+  },
+  {
+   "path": "/device-service/deviceservice/user-device/{id}",
+   "method": "get_user_device",
+   "module": "devices",
+   "http": "GET"
+  },
+  {
+   "path": "/device-service/sensors",
+   "method": "get_sensors",
+   "module": "devices",
+   "http": "GET"
+  },
+  {
+   "path": "/devicesettings-service/device",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_devicesettings_url)"
+  },
+  {
+   "path": "/devicesettings-service/device/displayed-activities/{id}",
+   "method": "get_device_displayed_activities",
+   "module": "devices",
+   "http": "GET"
+  },
+  {
+   "path": "/fitnessage-service/fitnessage/v2/{date}",
+   "method": "get_fitness_age_details",
+   "module": "metrics",
+   "http": "GET"
+  },
+  {
+   "path": "/fitnessage-service/stats/daily/{start}/{end}",
+   "method": "get_fitness_age_daily",
+   "module": "metrics",
+   "http": "GET"
+  },
+  {
+   "path": "/fitnessage-service/stats/weekly/{end}/{weeks}",
+   "method": "get_fitness_age_weekly",
+   "module": "metrics",
+   "http": "GET"
+  },
+  {
+   "path": "/fitnessstats-service/activity/availableMetrics",
+   "method": "get_available_metrics",
+   "module": "activities",
+   "http": "GET"
+  },
+  {
+   "path": "/fitnessstats-service/powerCurve",
+   "method": "get_power_curve",
+   "module": "metrics",
+   "http": "GET"
+  },
+  {
+   "path": "/fitnessstats-service/vbt-stats/one-rep-max",
+   "method": "get_one_rep_max",
+   "module": "metrics",
+   "http": "GET"
+  },
+  {
+   "path": "/fitnessstats-service/vbt-stats/one-rep-max/{exercise_type_strip_upper}/{aggregation}",
+   "method": "get_one_rep_max_history",
+   "module": "metrics",
+   "http": "GET"
+  },
+  {
+   "path": "/gear-service/activity/v2/{id}",
+   "method": "get_activity_gear_v2",
+   "module": "gear",
+   "http": "GET"
+  },
+  {
+   "path": "/gear-service/gear/makemodels",
+   "method": "get_gear_make_models",
+   "module": "gear",
+   "http": "GET"
+  },
+  {
+   "path": "/gear-service/gear/types",
+   "method": "get_gear_types",
+   "module": "gear",
+   "http": "GET"
+  },
+  {
+   "path": "/gear-service/gear/v2/list",
+   "method": "get_gear_list",
+   "module": "gear",
+   "http": "GET"
+  },
+  {
+   "path": "/gear-service/gear/v2/user-gear-types",
+   "method": "get_user_gear_types",
+   "module": "gear",
+   "http": "GET"
+  },
+  {
+   "path": "/gear-service/gear/v2/{uuid}",
+   "method": "get_gear_details",
+   "module": "gear",
+   "http": "GET",
+   "also": [
+    "update_gear",
+    "delete_gear"
+   ]
+  },
+  {
+   "path": "/gear-service/gear/v2/{uuid}/status/{status}",
+   "method": "set_gear_status",
+   "module": "gear",
+   "http": "write (POST/PUT/DELETE)"
+  },
+  {
+   "path": "/goal-service/goal",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_goal_service_url)"
+  },
+  {
+   "path": "/goal-service/goal/goals",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_goals_url)"
+  },
+  {
+   "path": "/goal-service/goal/user",
+   "method": "get_user_goals",
+   "module": "achievements",
+   "http": "GET"
+  },
+  {
+   "path": "/goal-service/goal/user/effective/weightgoal/{start}/{end}",
+   "method": "get_weight_goal",
+   "module": "achievements",
+   "http": "GET"
+  },
+  {
+   "path": "/goal-service/goal/user/effective/{date}",
+   "method": "get_effective_goals",
+   "module": "achievements",
+   "http": "GET"
+  },
+  {
+   "path": "/goal-service/goal/user/effective/{slug}/{date}",
+   "method": "set_daily_goal",
+   "module": "achievements",
+   "http": "write (POST/PUT/DELETE)"
+  },
+  {
+   "path": "/hrv-service/hrv",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_hrv_url)"
+  },
+  {
+   "path": "/hrv-service/hrv/daily/{start}/{end}",
+   "method": "get_hrv_data_range",
+   "module": "health",
+   "http": "GET"
+  },
+  {
+   "path": "/hrv-service/hrv/{date}",
+   "method": "get_hrv_data",
+   "module": "health",
+   "http": "GET"
+  },
+  {
+   "path": "/jetlag-service/jetlag",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_jetlag_url)"
+  },
+  {
+   "path": "/jetlag-service/jetlag/status/daily/{date}",
+   "method": "get_jetlag_status",
+   "module": "health",
+   "http": "GET"
+  },
+  {
+   "path": "/jetlag-service/jetlag/trip",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_jetlag_trip_url)"
+  },
+  {
+   "path": "/jetlag-service/jetlag/trip/all",
+   "method": "get_jetlag_trips",
+   "module": "health",
+   "http": "GET"
+  },
+  {
+   "path": "/jetlag-service/jetlag/trip/{id}",
+   "method": "delete_jetlag_trip",
+   "module": "health",
+   "http": "write (POST/PUT/DELETE)"
+  },
+  {
+   "path": "/lifestylelogging-service/dailyLog",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_daily_lifestyle_logging_url)"
+  },
+  {
+   "path": "/lifestylelogging-service/dailyLog/{date}",
+   "method": "get_lifestyle_logging_data",
+   "module": "health",
+   "http": "GET"
+  },
+  {
+   "path": "/metrics-service/metrics",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_metrics_base_url)"
+  },
+  {
+   "path": "/metrics-service/metrics/cycling-ability",
+   "method": "get_cycling_ability_range",
+   "module": "metrics",
+   "http": "GET"
+  },
+  {
+   "path": "/metrics-service/metrics/cycling-ability/latest",
+   "method": "get_cycling_ability",
+   "module": "metrics",
+   "http": "GET"
+  },
+  {
+   "path": "/metrics-service/metrics/endurancescore",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_endurance_score_url)"
+  },
+  {
+   "path": "/metrics-service/metrics/endurancescore/stats",
+   "method": "get_endurance_score",
+   "module": "metrics",
+   "http": "GET"
+  },
+  {
+   "path": "/metrics-service/metrics/heataltitudeacclimation/latest/{date}",
+   "method": "get_heat_altitude_acclimation",
+   "module": "metrics",
+   "http": "GET"
+  },
+  {
+   "path": "/metrics-service/metrics/heataltitudeacclimation/{aggregation}/{start}/{end}",
+   "method": "get_heat_altitude_acclimation_range",
+   "module": "metrics",
+   "http": "GET"
+  },
+  {
+   "path": "/metrics-service/metrics/hillscore",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_hill_score_url)"
+  },
+  {
+   "path": "/metrics-service/metrics/hillscore/stats",
+   "method": "get_hill_score",
+   "module": "metrics",
+   "http": "GET"
+  },
+  {
+   "path": "/metrics-service/metrics/maxmet/daily",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_metrics_url)"
+  },
+  {
+   "path": "/metrics-service/metrics/maxmet/daily/{date}/{date}",
+   "method": "get_max_metrics",
+   "module": "metrics",
+   "http": "GET"
+  },
+  {
+   "path": "/metrics-service/metrics/maxmet/latest/{date}",
+   "method": "get_max_metrics_latest",
+   "module": "metrics",
+   "http": "GET"
+  },
+  {
+   "path": "/metrics-service/metrics/racepredictions",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_race_predictor_url)"
+  },
+  {
+   "path": "/metrics-service/metrics/racepredictions/latest/{dn}",
+   "method": "get_race_predictions",
+   "module": "metrics",
+   "http": "GET"
+  },
+  {
+   "path": "/metrics-service/metrics/racepredictions/{type}/{dn}",
+   "method": "get_race_predictions",
+   "module": "metrics",
+   "http": "GET"
+  },
+  {
+   "path": "/metrics-service/metrics/runningeconomy/latest/{date}",
+   "method": "get_running_economy",
+   "module": "metrics",
+   "http": "GET"
+  },
+  {
+   "path": "/metrics-service/metrics/runningeconomy/{aggregation}",
+   "method": "get_running_economy_range",
+   "module": "metrics",
+   "http": "GET"
+  },
+  {
+   "path": "/metrics-service/metrics/runningtolerance/stats",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_running_tolerance_url)"
+  },
+  {
+   "path": "/metrics-service/metrics/stamina-curve/latest",
+   "method": "get_stamina_curve",
+   "module": "metrics",
+   "http": "GET"
+  },
+  {
+   "path": "/metrics-service/metrics/trainingloadbalance",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_training_load_balance_url)"
+  },
+  {
+   "path": "/metrics-service/metrics/trainingloadbalance/latest/{date}",
+   "method": "get_training_four_week_load_balance",
+   "module": "metrics",
+   "http": "GET"
+  },
+  {
+   "path": "/metrics-service/metrics/trainingreadiness",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_training_readiness_url)"
+  },
+  {
+   "path": "/metrics-service/metrics/trainingreadiness/{date}",
+   "method": "get_training_readiness",
+   "module": "metrics",
+   "http": "GET"
+  },
+  {
+   "path": "/metrics-service/metrics/trainingreadiness/{start}/{end}",
+   "method": "get_training_readiness_range",
+   "module": "metrics",
+   "http": "GET"
+  },
+  {
+   "path": "/metrics-service/metrics/trainingstatus/aggregated",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_training_status_url)"
+  },
+  {
+   "path": "/metrics-service/metrics/trainingstatus/aggregated/{date}",
+   "method": "get_training_status",
+   "module": "metrics",
+   "http": "GET"
+  },
+  {
+   "path": "/metrics-service/metrics/trainingstatus/daily",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_daily_training_status_url)"
+  },
+  {
+   "path": "/metrics-service/metrics/trainingstatus/daily/{date}",
+   "method": "get_daily_training_status",
+   "module": "metrics",
+   "http": "GET"
+  },
+  {
+   "path": "/metrics-service/metrics/trainingstatus/weekly/{dn}",
+   "method": "get_weekly_training_status",
+   "module": "metrics",
+   "http": "GET"
+  },
+  {
+   "path": "/nutrition-service/calorie/summary/daily",
+   "method": "get_calorie_summary",
+   "module": "health",
+   "http": "GET"
+  },
+  {
+   "path": "/nutrition-service/user/nutritionCurrentStatus",
+   "method": "get_nutrition_status",
+   "module": "health",
+   "http": "GET"
+  },
+  {
+   "path": "/periodichealth-service/menstrualcycle",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_menstrual_cycle_url)"
+  },
+  {
+   "path": "/periodichealth-service/menstrualcycle/calendar",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_menstrual_calendar_url)"
+  },
+  {
+   "path": "/periodichealth-service/menstrualcycle/calendar/{start}/{end}",
+   "method": "get_menstrual_calendar_data",
+   "module": "womens_health",
+   "http": "GET"
+  },
+  {
+   "path": "/periodichealth-service/menstrualcycle/calendarupdates",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_menstrual_calendar_updates_url)"
+  },
+  {
+   "path": "/periodichealth-service/menstrualcycle/dailylog",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_menstrual_dailylog_url)"
+  },
+  {
+   "path": "/periodichealth-service/menstrualcycle/dailylog/{end}",
+   "method": "update_menstrual_daily_log",
+   "module": "womens_health",
+   "http": "write (POST/PUT/DELETE)"
+  },
+  {
+   "path": "/periodichealth-service/menstrualcycle/dayview",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_menstrual_dayview_url)"
+  },
+  {
+   "path": "/periodichealth-service/menstrualcycle/dayview/{date}",
+   "method": "get_menstrual_data_for_date",
+   "module": "womens_health",
+   "http": "GET"
+  },
+  {
+   "path": "/periodichealth-service/menstrualcycle/initCycleSetup",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_menstrual_init_cycle_setup_url)"
+  },
+  {
+   "path": "/periodichealth-service/menstrualcycle/lastconfirmed",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_menstrual_lastconfirmed_url)"
+  },
+  {
+   "path": "/periodichealth-service/menstrualcycle/lastconfirmed/{date}",
+   "method": "get_menstrual_last_confirmed",
+   "module": "womens_health",
+   "http": "GET"
+  },
+  {
+   "path": "/periodichealth-service/menstrualcycle/pregnancysnapshot",
+   "method": "get_pregnancy_summary",
+   "module": "womens_health",
+   "http": "GET"
+  },
+  {
+   "path": "/periodichealth-service/menstrualcycle/summary",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_menstrual_summary_url)"
+  },
+  {
+   "path": "/periodichealth-service/menstrualcycle/summary/{date}",
+   "method": "get_menstrual_cycle_summary",
+   "module": "womens_health",
+   "http": "GET"
+  },
+  {
+   "path": "/periodichealth-service/menstrualcycle/{start}",
+   "method": "confirm_menstrual_period_start",
+   "module": "womens_health",
+   "http": "write (POST/PUT/DELETE)"
+  },
+  {
+   "path": "/periodichealth-service/reports/menstrualcycle",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_menstrual_reports_url)"
+  },
+  {
+   "path": "/periodichealth-service/reports/menstrualcycle/{number_of_cycles}/{date}",
+   "method": "get_menstrual_reports",
+   "module": "womens_health",
+   "http": "GET"
+  },
+  {
+   "path": "/personalrecord-service/personalrecord/prByActivityId/{id}",
+   "method": "get_personal_records_for_activity",
+   "module": "achievements",
+   "http": "GET"
+  },
+  {
+   "path": "/personalrecord-service/personalrecord/prs",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_personal_record_url)"
+  },
+  {
+   "path": "/personalrecord-service/personalrecord/prs/{dn}",
+   "method": "get_personal_record",
+   "module": "achievements",
+   "http": "GET"
+  },
+  {
+   "path": "/personalrecord-service/personalrecordcandidate/{dn}",
+   "method": "get_personal_record_candidates",
+   "module": "achievements",
+   "http": "GET"
+  },
+  {
+   "path": "/personalrecord-service/personalrecordtype/prtypes/{dn}",
+   "method": "get_personal_record_types",
+   "module": "achievements",
+   "http": "GET"
+  },
+  {
+   "path": "/privacysettings-service/privacy-settings",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_privacy_settings_url)"
+  },
+  {
+   "path": "/reportexport-service/export",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_report_export_url)"
+  },
+  {
+   "path": "/reportexport-service/export/init/{category}/{start}/{end}",
+   "method": "request_report",
+   "module": "training",
+   "http": "write (POST/PUT/DELETE)"
+  },
+  {
+   "path": "/reportexport-service/export/reportContent/{id}",
+   "method": "download_report",
+   "module": "training",
+   "http": "GET"
+  },
+  {
+   "path": "/reportexport-service/export/reportStatus/{id}",
+   "method": "get_report_status",
+   "module": "training",
+   "http": "GET"
+  },
+  {
+   "path": "/segment-service/segment/list/{id}",
+   "method": "get_activity_segments",
+   "module": "activities",
+   "http": "GET"
+  },
+  {
+   "path": "/sleep-service/sleep/dailySleepData",
+   "method": "get_daily_sleep",
+   "module": "health",
+   "http": "GET"
+  },
+  {
+   "path": "/sleep-service/sleep/naps/{date}",
+   "method": "get_naps",
+   "module": "health",
+   "http": "GET"
+  },
+  {
+   "path": "/sleep-service/stats/sleep/daily/{start}/{end}",
+   "method": "get_sleep_daily",
+   "module": "health",
+   "http": "GET"
+  },
+  {
+   "path": "/sleep-service/stats/sleep/overall/{start}/{end}",
+   "method": "get_sleep_stats_overall",
+   "module": "health",
+   "http": "GET"
+  },
+  {
+   "path": "/sleep-service/stats/sleep/weekly/{end}/{weeks}",
+   "method": "get_sleep_stats_weekly",
+   "module": "health",
+   "http": "GET"
+  },
+  {
+   "path": "/trainingplan-service/trainingplan",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_training_plan_url)"
+  },
+  {
+   "path": "/trainingplan-service/trainingplan/active-plans",
+   "method": "get_active_training_plans",
+   "module": "training",
+   "http": "GET"
+  },
+  {
+   "path": "/trainingplan-service/trainingplan/fbt-adaptive/{id}",
+   "method": "get_adaptive_training_plan_by_id",
+   "module": "training",
+   "http": "GET"
+  },
+  {
+   "path": "/trainingplan-service/trainingplan/phased/{id}",
+   "method": "get_training_plan_by_id",
+   "module": "training",
+   "http": "GET"
+  },
+  {
+   "path": "/trainingplan-service/trainingplan/plans",
+   "method": "get_training_plans",
+   "module": "training",
+   "http": "GET"
+  },
+  {
+   "path": "/trainingplan-service/trainingplan/schedule/{id}",
+   "method": "schedule_training_plan",
+   "module": "training",
+   "http": "write (POST/PUT/DELETE)"
+  },
+  {
+   "path": "/trainingplan-service/trainingplan/search",
+   "method": "search_training_plans",
+   "module": "training",
+   "http": "GET"
+  },
+  {
+   "path": "/trainingplan-service/trainingplan/tasks/{id}",
+   "method": "get_training_plan_tasks",
+   "module": "training",
+   "http": "GET"
+  },
+  {
+   "path": "/trainingplan-service/trainingplan/trainingplan/{id}",
+   "method": "delete_training_plan",
+   "module": "training",
+   "http": "write (POST/PUT/DELETE)"
+  },
+  {
+   "path": "/userprofile-service/biometric/current/{dn}",
+   "method": "get_current_biometrics",
+   "module": "metrics",
+   "http": "GET"
+  },
+  {
+   "path": "/userprofile-service/userprofile",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_userprofile_url)"
+  },
+  {
+   "path": "/userprofile-service/userprofile/personal-information",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_personal_information_url)"
+  },
+  {
+   "path": "/userprofile-service/userprofile/personal-information/{dn}",
+   "method": "get_user_timezone",
+   "module": "base",
+   "http": "GET",
+   "also": [
+    "get_personal_information"
+   ]
+  },
+  {
+   "path": "/userprofile-service/userprofile/settings",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_userprofile_settings_url)"
+  },
+  {
+   "path": "/userprofile-service/userprofile/user-settings",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_user_settings_url)"
+  },
+  {
+   "path": "/userprofile-service/userprofile/user-settings/primary-training-device",
+   "method": "set_primary_training_device",
+   "module": "base",
+   "http": "write (POST/PUT/DELETE)"
+  },
+  {
+   "path": "/userprofile-service/userprofile/userProfileBase",
+   "method": "get_user_profile_base",
+   "module": "base",
+   "http": "GET"
+  },
+  {
+   "path": "/userstats-service/activities/weekly/{dn}",
+   "method": "get_weekly_activity_stats",
+   "module": "activities",
+   "http": "GET"
+  },
+  {
+   "path": "/userstats-service/statistics/{dn}",
+   "method": "get_user_statistics",
+   "module": "health",
+   "http": "GET"
+  },
+  {
+   "path": "/userstats-service/wellness/daily",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_rhr_url)"
+  },
+  {
+   "path": "/userstats-service/wellness/daily/{dn}",
+   "method": "get_rhr_day",
+   "module": "health",
+   "http": "GET",
+   "also": [
+    "get_rhr_daily",
+    "get_calories_daily"
+   ]
+  },
+  {
+   "path": "/userstats-service/wellness/monthly/{dn}",
+   "method": "get_monthly_wellness_stats",
+   "module": "health",
+   "http": "GET"
+  },
+  {
+   "path": "/userstats-service/wellness/weekly/{dn}",
+   "method": "get_weekly_wellness_stats",
+   "module": "health",
+   "http": "GET"
+  },
+  {
+   "path": "/usersummary-service/stats",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_usersummary_stats_url)"
+  },
+  {
+   "path": "/usersummary-service/stats/averages/{start}/{end}",
+   "method": "get_stats_averages",
+   "module": "health",
+   "http": "GET"
+  },
+  {
+   "path": "/usersummary-service/stats/connectLifetimeTotals/{dn}",
+   "method": "get_lifetime_totals",
+   "module": "health",
+   "http": "GET"
+  },
+  {
+   "path": "/usersummary-service/stats/im/weekly",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_weekly_stats_intensity_minutes_url)"
+  },
+  {
+   "path": "/usersummary-service/stats/im/weekly/{start}/{end}",
+   "method": "get_weekly_intensity_minutes",
+   "module": "health",
+   "http": "GET"
+  },
+  {
+   "path": "/usersummary-service/stats/steps/daily",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_daily_stats_steps_url)"
+  },
+  {
+   "path": "/usersummary-service/stats/steps/daily/{start}/{end}",
+   "method": "get_daily_steps",
+   "module": "health",
+   "http": "GET"
+  },
+  {
+   "path": "/usersummary-service/stats/steps/monthly/{end}/{months}",
+   "method": "get_monthly_steps",
+   "module": "health",
+   "http": "GET"
+  },
+  {
+   "path": "/usersummary-service/stats/steps/weekly",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_weekly_stats_steps_url)"
+  },
+  {
+   "path": "/usersummary-service/stats/steps/weekly/{end}/{weeks}",
+   "method": "get_weekly_steps",
+   "module": "health",
+   "http": "GET"
+  },
+  {
+   "path": "/usersummary-service/stats/stress/weekly",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_weekly_stats_stress_url)"
+  },
+  {
+   "path": "/usersummary-service/stats/stress/weekly/{end}/{weeks}",
+   "method": "get_weekly_stress",
+   "module": "health",
+   "http": "GET"
+  },
+  {
+   "path": "/usersummary-service/stats/{path}/{start}/{end}",
+   "method": "get_daily_stats",
+   "module": "health",
+   "http": "GET"
+  },
+  {
+   "path": "/usersummary-service/stats/{series}/daily/{start}/{end}",
+   "method": "_usersummary_daily_series",
+   "module": "health",
+   "http": "GET"
+  },
+  {
+   "path": "/usersummary-service/stats/{series}/weekly/{end}/{weeks}",
+   "method": "_usersummary_weekly_series",
+   "module": "health",
+   "http": "GET"
+  },
+  {
+   "path": "/usersummary-service/usersummary",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_usersummary_url)"
+  },
+  {
+   "path": "/usersummary-service/usersummary/daily",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_daily_summary_url)"
+  },
+  {
+   "path": "/usersummary-service/usersummary/daily/{dn}",
+   "method": "get_user_summary",
+   "module": "health",
+   "http": "GET"
+  },
+  {
+   "path": "/usersummary-service/usersummary/hydration/allData/{date}",
+   "method": "get_hydration_all_data",
+   "module": "health",
+   "http": "GET"
+  },
+  {
+   "path": "/usersummary-service/usersummary/hydration/daily",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_daily_hydration_url)"
+  },
+  {
+   "path": "/usersummary-service/usersummary/hydration/daily/{date}",
+   "method": "get_hydration_data",
+   "module": "health",
+   "http": "GET"
+  },
+  {
+   "path": "/usersummary-service/usersummary/hydration/log",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_set_hydration_url)"
+  },
+  {
+   "path": "/usersummary-service/usersummary/weekAverageRestingHR/{dn}",
+   "method": "get_week_average_resting_hr",
+   "module": "health",
+   "http": "GET"
+  },
+  {
+   "path": "/usersummary-service/v2",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_usersummary_v2_url)"
+  },
+  {
+   "path": "/usersummary-service/v2/dailysummaries",
+   "method": "get_daily_summaries",
+   "module": "health",
+   "http": "GET"
+  },
+  {
+   "path": "/weight-service/user-weight",
+   "method": "add_weigh_in",
+   "module": "body",
+   "http": "write (POST/PUT/DELETE)",
+   "also": [
+    "add_weigh_in_with_timestamps"
+   ]
+  },
+  {
+   "path": "/weight-service/weight/daily/last",
+   "method": "get_daily_last_weight",
+   "module": "body",
+   "http": "GET"
+  },
+  {
+   "path": "/weight-service/weight/dateRange",
+   "method": "get_body_composition",
+   "module": "body",
+   "http": "GET"
+  },
+  {
+   "path": "/weight-service/weight/daterangesnapshot",
+   "method": "get_weight_snapshot",
+   "module": "body",
+   "http": "GET"
+  },
+  {
+   "path": "/weight-service/weight/dayview/{date}",
+   "method": "get_daily_weigh_ins",
+   "module": "body",
+   "http": "GET"
+  },
+  {
+   "path": "/weight-service/weight/first",
+   "method": "get_first_weight",
+   "module": "body",
+   "http": "GET"
+  },
+  {
+   "path": "/weight-service/weight/latest",
+   "method": "get_latest_weight",
+   "module": "body",
+   "http": "GET"
+  },
+  {
+   "path": "/weight-service/weight/range/{start}/{end}",
+   "method": "get_weigh_ins",
+   "module": "body",
+   "http": "GET"
+  },
+  {
+   "path": "/weight-service/weight/weeklyRange/{start}/{end}",
+   "method": "get_weekly_weight",
+   "module": "body",
+   "http": "GET"
+  },
+  {
+   "path": "/weight-service/weight/{date}/byversion/{weight_pk}",
+   "method": "delete_weigh_in",
+   "module": "body",
+   "http": "write (POST/PUT/DELETE)"
+  },
+  {
+   "path": "/wellness-service/stats",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_wellness_stats_url)"
+  },
+  {
+   "path": "/wellness-service/stats/daily/acclimation",
+   "method": "get_acclimation_stats",
+   "module": "metrics",
+   "http": "GET"
+  },
+  {
+   "path": "/wellness-service/stats/hourly/im/{end}/{days}",
+   "method": "get_hourly_intensity_minutes",
+   "module": "health",
+   "http": "GET"
+  },
+  {
+   "path": "/wellness-service/wellness",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_wellness_url)"
+  },
+  {
+   "path": "/wellness-service/wellness/bodyBattery/events",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_body_battery_events_url)"
+  },
+  {
+   "path": "/wellness-service/wellness/bodyBattery/events/{date}",
+   "method": "get_body_battery_events",
+   "module": "health",
+   "http": "GET"
+  },
+  {
+   "path": "/wellness-service/wellness/bodyBattery/reports/daily",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_daily_body_battery_url)"
+  },
+  {
+   "path": "/wellness-service/wellness/daily/respiration",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_daily_respiration_url)"
+  },
+  {
+   "path": "/wellness-service/wellness/daily/respiration/{date}",
+   "method": "get_respiration_data",
+   "module": "health",
+   "http": "GET"
+  },
+  {
+   "path": "/wellness-service/wellness/daily/spo2",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_daily_spo2_url)"
+  },
+  {
+   "path": "/wellness-service/wellness/daily/spo2/{date}",
+   "method": "get_spo2_data",
+   "module": "health",
+   "http": "GET"
+  },
+  {
+   "path": "/wellness-service/wellness/daily/spo2acclimation/{date}",
+   "method": "get_spo2_acclimation_data",
+   "module": "metrics",
+   "http": "GET"
+  },
+  {
+   "path": "/wellness-service/wellness/dailyEvents",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_daily_events_url)"
+  },
+  {
+   "path": "/wellness-service/wellness/dailyHeartRate",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_heartrates_daily_url)"
+  },
+  {
+   "path": "/wellness-service/wellness/dailyHeartRate/{dn}",
+   "method": "get_heart_rates",
+   "module": "health",
+   "http": "GET"
+  },
+  {
+   "path": "/wellness-service/wellness/dailyMovement",
+   "method": "get_daily_movement",
+   "module": "health",
+   "http": "GET"
+  },
+  {
+   "path": "/wellness-service/wellness/dailySleepData",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_daily_sleep_url)"
+  },
+  {
+   "path": "/wellness-service/wellness/dailySleepData/{dn}",
+   "method": "get_sleep_data",
+   "module": "health",
+   "http": "GET"
+  },
+  {
+   "path": "/wellness-service/wellness/dailyStress",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_daily_stress_url)"
+  },
+  {
+   "path": "/wellness-service/wellness/dailyStress/{date}",
+   "method": "get_all_day_stress",
+   "module": "health",
+   "http": "GET",
+   "also": [
+    "get_stress_data"
+   ]
+  },
+  {
+   "path": "/wellness-service/wellness/epoch/request",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_request_reload_url)"
+  },
+  {
+   "path": "/wellness-service/wellness/epoch/request/{date}",
+   "method": "request_reload",
+   "module": "base",
+   "http": "write (POST/PUT/DELETE)"
+  },
+  {
+   "path": "/wellness-service/wellness/floorsChartData/daily",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_floors_chart_daily_url)"
+  },
+  {
+   "path": "/wellness-service/wellness/floorsChartData/daily/{date}",
+   "method": "get_floors",
+   "module": "health",
+   "http": "GET"
+  },
+  {
+   "path": "/wellness-service/wellness/syncTimestamp",
+   "method": "get_sync_timestamp",
+   "module": "health",
+   "http": "GET"
+  },
+  {
+   "path": "/wellness-service/wellness/wellness-goals/consolidated/steps/{date}",
+   "method": "get_steps_goal",
+   "module": "achievements",
+   "http": "GET",
+   "also": [
+    "set_steps_goal"
+   ]
+  },
+  {
+   "path": "/wellnessactivity-service/activity",
+   "method": null,
+   "module": "base",
+   "http": "GET",
+   "note": "prefix (garmin_connect_health_snapshot_url)"
+  },
+  {
+   "path": "/wellnessactivity-service/activity/epoch/{uuid}",
+   "method": "get_health_snapshot_epochs",
+   "module": "health",
+   "http": "GET"
+  },
+  {
+   "path": "/wellnessactivity-service/activity/summary/range/{start}/{end}",
+   "method": "get_health_snapshots_range",
+   "module": "health",
+   "http": "GET"
+  },
+  {
+   "path": "/wellnessactivity-service/activity/summary/{date}",
+   "method": "get_health_snapshots",
+   "module": "health",
+   "http": "GET"
+  },
+  {
+   "path": "/wellnessactivity-service/activity/summary/{date}/{uuid}",
+   "method": "get_health_snapshot",
+   "module": "health",
+   "http": "GET"
+  },
+  {
+   "path": "/workout-service/benchmarks",
+   "method": "get_strength_benchmarks",
+   "module": "workouts",
+   "http": "GET"
+  },
+  {
+   "path": "/workout-service/schedule/workoutScheduleByPeriod",
+   "method": "get_scheduled_workouts_by_period",
+   "module": "workouts",
+   "http": "GET"
+  },
+  {
+   "path": "/workout-service/workout/copy/{id}",
+   "method": "copy_workout",
+   "module": "workouts",
+   "http": "write (POST/PUT/DELETE)"
+  },
+  {
+   "path": "/workout-service/workout/types",
+   "method": "get_workout_types",
+   "module": "workouts",
+   "http": "GET"
+  },
+  {
+   "path": "/workout-service/workouts/count",
+   "method": "get_workout_count",
+   "module": "workouts",
+   "http": "GET"
+  },
+  {
+   "path": "/workout-service/workouts/sport-types",
+   "method": "get_workout_sport_types",
+   "module": "workouts",
+   "http": "GET"
+  }
+ ]
+}

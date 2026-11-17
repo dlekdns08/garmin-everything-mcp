@@ -1,0 +1,17 @@
+# Returned 404/400 for the probing account on 2026-11-17. They may still work for
+# accounts with the matching device/feature (listed by library method name).
+get_naps	sleep naps
+get_lifetime_totals	lifetime totals
+get_acclimation_stats	acclimation
+get_hourly_intensity_minutes	hourly intensity minutes
+get_running_economy	running economy
+get_heat_altitude_acclimation	heat/altitude latest
+get_max_metrics_latest	maxmet latest
+get_power_curve	power curve
+get_one_rep_max	one-rep max
+get_fitness_age_daily	fitness age daily
+get_critical_swim_speed	critical swim speed
+get_device_solar_gain	solar gain
+get_calorie_summary	calorie summary
+get_ecg_list	ECG
+get_health_snapshots	health snapshot

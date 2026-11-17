@@ -1,0 +1,58 @@
+# Raw Garmin Connect API paths verified with a real account on 2026-11-17 via
+# Garmin.connectapi(path). Placeholders: {dn} = display name (garmin_raw_get fills it
+# in), {start}/{end}/{date} = YYYY-MM-DD, {YYYY-MM-01} = first of month.
+# Format: path<TAB>note
+/sleep-service/stats/sleep/daily/{start}/{end}	dict: overallStats + per-day sleep stats
+/wellness-service/stats/daily/sleep/score/{start}/{end}	list [{calendarDate, value}] sleep score per day
+/usersummary-service/stats/bodybattery/daily/{start}/{end}	list values{lowBodyBattery, highBodyBattery}
+/usersummary-service/stats/heartRate/daily/{start}/{end}	list values{restingHR, wellnessMaxAvgHR, ...}
+/usersummary-service/stats/steps/monthly/{YYYY-MM-01}/{months}	list values{totalSteps, ...}
+/usersummary-service/stats/floors/daily/{start}/{end}	floors climbed per day
+/usersummary-service/stats/hydration/daily/{start}/{end}	hydration per day
+/usersummary-service/stats/respiration/daily/{start}/{end}	avgWakingRespiration, avgSleepRespiration
+/usersummary-service/stats/im/daily/{start}/{end}	intensity minutes: moderateValue, vigorousValue, weeklyGoal
+/usersummary-service/stats/calories/weekly/{end}/{weeks}	weekly calories
+/usersummary-service/stats/stress/daily/{start}/{end}	highStressDuration, ..., overallStressLevel
+/hrv-service/hrv/daily/{start}/{end}	hrvSummaries[] per night
+/userstats-service/wellness/weekly/{dn}?fromDate=&untilDate=	weekly wellness stats
+/userstats-service/activities/weekly/{dn}?fromDate=&untilDate=	weekly activity stats
+/userstats-service/statistics/{dn}	lifetime user statistics
+/wellness-service/wellness/dailyMovement/{dn}?calendarDate=	intraday movement
+/wellness-service/wellness/dailySummaryChart/{dn}?date=	list of 15-min epochs {steps, primaryActivityLevel}
+/wellness-service/wellness/dailyHeartRate/{dn}?date=	heartRateValues [[ts, bpm]] intraday
+/wellness-service/wellness/daily/respiration/{date}	intraday respiration
+/metrics-service/metrics/trainingloadbalance/latest/{date}	training load balance
+/metrics-service/metrics/trainingstatus/daily/{date}	daily training status
+/metrics-service/metrics/maxmet/weekly/{start}/{end}	weekly VO2max (vo2MaxPreciseValue)
+/metrics-service/metrics/cycling-ability/latest	cycling ability
+/metrics-service/metrics/stamina-curve/latest	stamina curve (may be empty)
+/metrics-service/metrics/endurancescore?calendarDate=	endurance score
+/biometric-service/heartRateZones/v2	heart rate zones per sport
+/biometric-service/powerZones/sports/all	power zones per sport
+/userprofile-service/userprofile/personal-information	CONTAINS email and birthDate (redacted by default)
+/userprofile-service/userprofile/userProfileBase	CONTAINS userName and names (redacted by default)
+/jetlag-service/jetlag/trip/all	jet lag trips
+/jetlag-service/jetlag/status/daily/{date}	jet lag status
+/calendar-service/year/{y}/month/{m}	calendar month
+/calendar-service/events/upcoming	upcoming events
+/device-service/sensors	paired sensors (HRM etc.)
+/weight-service/weight/range/{start}/{end}?includeAll=true	weight range
+/weight-service/weight/first	first recorded weight
+/personalrecord-service/personalrecord/prs/{dn}	personal records
+/personalrecord-service/personalrecordcandidate/{dn}	personal record candidates
+/workout-service/workouts/sport-types	workout sport types
+/workout-service/workout/types	workout types
+/workout-service/benchmarks	strength benchmarks
+/workout-service/schedule/workoutScheduleByPeriod?startDate=&endDate=	scheduled workouts in a period
+/gear-service/activity/v2/{activityId}	gear used on an activity
+/goal-service/goal/user/effective/steps/{date}	effective step goal
+/wellness-service/wellness/wellness-goals/consolidated/steps/{date}	consolidated step goal
+/badge-service/badge/attributes	badge attributes
+/badgechallenge-service/virtualChallenge/available	available virtual challenges
+/course-service/course/favorites	favourite courses
+/course-service/pacebands	pace bands
+/nutrition-service/user/nutritionCurrentStatus	nutrition status
+/privacysettings-service/privacy-settings	privacy settings
+/activitylist-service/activities/{dn}?limit=	activity list
+/fitnessstats-service/activity?aggregation=daily&startDate=&endDate=&metric=duration&metric=distance&groupByParentActivityType=true	daily activity stats
+/connection-service/connection/connections	connections (contains other users' names; redacted by default)
